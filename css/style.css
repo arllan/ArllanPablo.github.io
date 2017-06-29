@@ -1,0 +1,30 @@
+.iconePrincipal 
+{	
+	margin: 0 auto;
+    float: none;
+}
+
+.iconeinstagram
+{
+	
+}
+
+.iconeFacebook
+{
+	margin-right: 10px;
+}
+.texto
+{
+	text-align: center;
+}
+
+.posicao, .iconeFacebook, .iconeinstagram
+{
+	float: right;
+}
+
+.imgMax, .iconeFacebook, .iconeinstagram  
+{
+	max-width: 50px;
+	max-height: 50px; 
+}
