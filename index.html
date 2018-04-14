@@ -242,22 +242,43 @@
 
 	                  <!--botão-->
 	                  <label>
-	                     <h5> Vitimas </h5>
+	                     <h5> Vitima 1 </h5>
 	                  </label>
-	                  <div data-value-obr="vitimas" class="btn-group btn-group-justified" data-toggle="buttons">
+	                  <div data-value-obr="vitima1" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="60" name="vitimas" id="option1" autocomplete="off">1º
+	                     <input class="elementoSoma" type="radio" value="60" name="vitima1" id="option1" autocomplete="off">1º
 	                     </label>
 	                     <label class="btn btn-success ">
-	                     <input class="elementoSoma" type="radio" value="40" name="vitimas" id="option2" autocomplete="off">2º
+	                     <input class="elementoSoma" type="radio" value="40" name="vitima1" id="option2" autocomplete="off">2º
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="20" name="vitimas" id="option3" autocomplete="off">3º
+	                     <input class="elementoSoma" type="radio" value="20" name="vitima1" id="option3" autocomplete="off">3º
 	                     </label>
 	                     <label class="btn btn-danger">
-	                     <input class="elementoSoma" type="radio" value="0" name="vitimas" id="option3" autocomplete="off"> > 4º
+	                     <input class="elementoSoma" type="radio" value="0" name="vitima1" id="option3" autocomplete="off"> > 4º
 	                     </label>
-	                     <span id="somaVitimas" class="input-group-addon">0</span>
+	                     <span id="somaVitima1" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                   <!--botão-->
+	                  <label>
+	                     <h5> Vitima 2 </h5>
+	                  </label>
+	                  <div data-value-obr="vitima2" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="60" name="vitima2" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="40" name="vitima2" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="20" name="vitima2" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="vitima2" id="option3" autocomplete="off"> > 4º
+	                     </label>
+	                     <span id="somaVitima2" class="input-group-addon">0</span>
 	                  </div>
 	                  <!--botão-->
 
@@ -321,10 +342,15 @@
              	$('#somaSala3').text($(this).val()); // o campo recebe o valor do botão radio clicado.
                  somaElementoFinal();
              	break;
-             case 'vitimas':
-             	$('#somaVitimas').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+             case 'vitima1':
+             	$('#somaVitima1').text($(this).val()); // o campo recebe o valor do botão radio clicado.
                  somaElementoFinal();
              	break;
+             	case 'vitima2':
+             	$('#somaVitima2').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+
              default:
                // statements_def
                break;
@@ -342,8 +368,9 @@
            var sala1 = Number($('#somaSala1').text()); // recebe o valor final do bnt radio da rampa
            var sala2 = Number($('#somaSala2').text()); // recebe o valor final do bnt radio da rampa
            var sala3 = Number($('#somaSala3').text()); // recebe o valor final do bnt radio da rampa
-           var vitimas = Number($('#somaVitimas').text()); // recebe o valor final do bnt radio da rampa
-           total =  gap + rampa + redutor + encruzilhada + obstaculo + sala1 + sala2 + sala3 + vitimas; // soma o valor final da gap com rampa
+           var vitima1 = Number($('#somaVitima1').text()); // recebe o valor final do bnt radio da rampa
+            var vitima2 = Number($('#somaVitima2').text()); // recebe o valor final do bnt radio da rampa
+           total =  gap + rampa + redutor + encruzilhada + obstaculo + sala1 + sala2 + sala3 + vitima1 + vitima2; // soma o valor final da gap com rampa
            console.log(total); // mostra no console o valor final da soma
            $('#pontuacao').text(total); // passa o valor final para o span do valor final
          }
