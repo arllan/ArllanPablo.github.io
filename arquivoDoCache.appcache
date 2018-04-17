@@ -1,0 +1,18 @@
+CACHE MANIFEST
+# VERSÃO DO CACHE /  PARA SER RENOVADO O CACHE E SÓ MUDAR ALGO DO CACHE (ESCRITA)
+# V1.0.0
+
+CACHE:
+# ARQUIVOS QUE VÃO FICAR NO CACHE DO NAVEGADOR
+index.html
+css/bootstrap.min.css
+css/style.css
+js/jquery.min.js
+js/bootstrap.min.js
+js/index.js
+js/scripts.js
+
+
+NETWORK:
+# ARQUIVOS QUE DEPENDEM DA WEB
+*
