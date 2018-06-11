@@ -19,7 +19,7 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet">
       <style type="text/css" media="screen">
-         #timeDiv { width: 100px; }
+         #timeDiv { width: 80px; }
       </style>
    </head>
    <body>
@@ -36,16 +36,24 @@
                            -->
                         <div id="timeDiv" class="navbar-brand " ><span id="seconds">00</span>:<span id="tens">00</span>s</div>
                         <div  class="btn-group elementBNT" role="group" aria-label="...">
-                           <button id="button-start" class="btn btn-success btn-default navbar-btn"><span class="glyphicon glyphicon-play"></span> <strong class="hidden-xs">Iniciar</strong></button>
-                           <button id="button-stop" class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-pause"></span> <strong class="hidden-xs"> Pausar</strong></button>
-                           <button id="button-reset" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-stop"></span> <strong class="hidden-xs"> Zerar</strong></button>
+                           <button id="button-start" class="btn btn-sm btn-success btn-default navbar-btn"><span class="glyphicon glyphicon-play"></span> <strong class="hidden-xs">Iniciar</strong></button>
+                           <button id="button-stop" class="btn btn-sm btn-info navbar-btn"><span class="glyphicon glyphicon-pause"></span> <strong class="hidden-xs"> Pausar</strong></button>
+                           <button id="button-reset" class="btn btn-sm btn-warning navbar-btn"><span class="glyphicon glyphicon-stop"></span> <strong class="hidden-xs"> Zerar</strong></button>
                         </div>
+                        <!--botão deve mostrar apenas quando estiver em celulares e tablets-->
+                        <div class="btn-group navbar-btn hidden-md hidden-lg " role="group" aria-label="...">
+                           <div id="pontuacao" class="btn btn-sm btn-default" disabled >00</div>
+                           <button id="zerarpontuacao" type="button" class="btn btn-sm btn-danger">Zerar</button>
+                       </div>
+                       <!--botão deve mostrar apenas quando estiver em celulares e tablets-->
                      </div>
-                     <div class="navbar-header navbar-right">
+                     <div class="navbar-header navbar-right hidden-xs hidden-sm">
                         <div class="btn-group navbar-btn" role="group" aria-label="...">
-                           <div id="pontuacao" class="btn btn-default" disabled > 0</div>
-                           <button id="zerarpontuacao" type="button" class="btn btn-danger">Zerar</button>
+                           <div id="pontuacao1" class="btn btn-sm btn-default" disabled >00</div>
+                           <button id="zerarpontuacao1" type="button" class="btn btn-sm btn-danger">Zerar</button>
+                           <!--
                            <button id="actionSubmit" type="button" class="btn btn-success">Salvar</button>
+                           -->
                            <!--
                            <div class="btn-group" role="group">
                               <button id="nadaaaa" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,8 +73,6 @@
             </div>
          </div>
          <div class="row">
-            <br>
-            <br>
             <br>
             <br>
 		<div class="visible-xs">
@@ -301,7 +307,7 @@
       </div>
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
-      <script  src="js/index.js"></script>
+      <script  src="js/index2.js"></script>
       <script src="js/scripts.js"></script>
       <script type="text/javascript">
          $('.elementoSoma').on('change',function(){  // evento que inicia tudo.
@@ -372,7 +378,7 @@
             var vitima2 = Number($('#somaVitima2').text()); // recebe o valor final do bnt radio da rampa
            total =  gap + rampa + redutor + encruzilhada + obstaculo + sala1 + sala2 + sala3 + vitima1 + vitima2; // soma o valor final da gap com rampa
            console.log(total); // mostra no console o valor final da soma
-           $('#pontuacao').text(total); // passa o valor final para o span do valor final
+           $("#pontuacao, #pontuacao1").text(total); // passa o valor final para o span do valor final
          }
       </script>
 
@@ -383,7 +389,7 @@
       			$('#formDados').submit();
       		});
 
-      		$('#zerarpontuacao').click(function(){
+      		$("#zerarpontuacao, #zerarpontuacao1").click(function(){
       			alert('Pontuação zerada!');
       			window.location.reload();
       		});
