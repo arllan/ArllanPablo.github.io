@@ -6,8 +6,6 @@ CACHE:
 # ARQUIVOS QUE VÃO FICAR NO CACHE DO NAVEGADOR
 index.html
 css/bootstrap.min.css
-css/style.css
-css/style.cs
 js/jquery.min.js
 js/bootstrap.min.js
 js/index.js
