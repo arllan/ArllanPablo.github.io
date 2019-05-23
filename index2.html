@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+   <head>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-101872419-1', 'auto');
+		  ga('send', 'pageview');
+	  </script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Pontuador</title>
+      <meta name="description" content="Pontuação OBR">
+      <meta name="author" content="Arllan Pablo">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <style type="text/css" media="screen">
+         #timeDiv { width: 100px; }
+      </style>
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-12">
+               <nav class="navbar navbar-default navbar-fixed-top">
+                  <div class="container-fluid">
+                     <div class="navbar-header">
+                        <!--
+                           <a class="navbar-brand" href="#">
+                             <img alt="Brand" src="...">
+                           </a>
+                           -->
+                        <div id="timeDiv" class="navbar-brand " ><span id="seconds">00</span>:<span id="tens">00</span>s</div>
+                        <div  class="btn-group elementBNT" role="group" aria-label="...">
+                           <button id="button-start" class="btn btn-success btn-default navbar-btn"><span class="glyphicon glyphicon-play"></span> Iniciar</button>
+                           <button id="button-stop" class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-pause"></span> Pausar</button>
+                           <button id="button-reset" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-stop"></span> Zerar</button>
+                        </div>
+                     </div>
+                     <div class="navbar-header navbar-right">
+                        <div class="btn-group navbar-btn" role="group" aria-label="...">
+                           <div id="pontuacao" class="btn btn-default" disabled > 0</div>
+                           <button id="zerarpontuacao" type="button" class="btn btn-danger">Zerar</button>
+                           <button id="actionSubmit" type="button" class="btn btn-success">Salvar</button>
+                           <!--
+                           <div class="btn-group" role="group">
+                              <button id="nadaaaa" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Servidor
+                              <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                 <li><a href="#">Local</a></li>
+                                 <li><a href="#">online</a></li>
+                              </ul>
+                           </div>
+                           -->
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </div>
+         <div class="row">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-1 col-lg-1">
+            </div>
+            <div class="col-md-10 col-lg-10">
+               <div class="thumbnail">
+	                <form id="formDados">
+	                  <!--corpo do botões-->
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Redutores</h5>
+	                  </label>
+	                  <div data-value-obr="redutores" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="5" name="redutor" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="10" name="redutor" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="15" name="redutor" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="20" name="redutor" id="option3" autocomplete="off">4º
+	                     </label>
+	                     <span id="somaRedutor" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                   <!--botão-->
+	                  <label>
+	                     <h5> Obstáculo</h5>
+	                  </label>
+	                  <div data-value-obr="obstaculo" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="10" name="obstaculo" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="20" name="obstaculo" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="30" name="obstaculo" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="40" name="obstaculo" id="option3" autocomplete="off">4º
+	                     </label>
+	                     <span id="somaObstaculo" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Encruzilhada</h5>
+	                  </label>
+	                  <div data-value-obr="encruzilhada" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="10" name="encruzilhada" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="20" name="encruzilhada" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="30" name="encruzilhada" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="40" name="encruzilhada" id="option4" autocomplete="off">4º
+	                     </label>
+	                     <span id="somaEncruzilhada" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Gap</h5>
+	                  </label>
+	                  <div data-value-obr="gap" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="10" name="gap" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="20" name="gap" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="30" name="gap" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <span id="somaGap" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Rampa </h5>
+	                  </label>
+	                  <div data-value-obr="rampa" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="30" name="rampa" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="20" name="rampa" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="10" name="rampa" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <span id="somaRampa" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Sala 1º </h5>
+	                  </label>
+	                  <div data-value-obr="sala1" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="60" name="sala1" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="40" name="sala1" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="20" name="sala1" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="sala1" id="option3" autocomplete="off"> > 4º
+	                     </label>
+	                     <span id="somaSala1" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Sala 2º </h5>
+	                  </label>
+	                  <div data-value-obr="sala2" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="60" name="sala2" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="40" name="sala2" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="20" name="sala2" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="sala2" id="option3" autocomplete="off"> > 4º
+	                     </label>
+	                     <span id="somaSala2" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Sala 3º </h5>
+	                  </label>
+	                  <div data-value-obr="sala3" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="60" name="sala3" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="40" name="sala3" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="20" name="sala3" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="sala3" id="option3" autocomplete="off"> > 4º
+	                     </label>
+	                     <span id="somaSala3" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Vitimas </h5>
+	                  </label>
+	                  <div data-value-obr="vitimas" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="60" name="vitimas" id="option1" autocomplete="off">1º
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="40" name="vitimas" id="option2" autocomplete="off">2º
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="20" name="vitimas" id="option3" autocomplete="off">3º
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="vitimas" id="option3" autocomplete="off"> > 4º
+	                     </label>
+	                     <span id="somaVitimas" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <input id="tempo" type="text" name="tempoRound" hidden="hidden" >
+	                  <input id="idEquipe" type="text" name="idEquipe" hidden="hidden">
+	                  <!--corpo do botões-->
+	                  <!--
+	                  <button type="submit" class="btn btn-danger btn-block">Salvar</button>
+	                  -->
+                  </form>
+               </div>
+            </div>
+            <div class="col-md-1 col-lg-1">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+            </div>
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script  src="js/index.js"></script>
+      <script src="js/scripts.js"></script>
+      <script type="text/javascript">
+         $('.elementoSoma').on('change',function(){  // evento que inicia tudo.
+           console.log($(this).parent().parent().attr('data-value-obr')); // mostra o elemento pai que dos radios acionado
+         
+           //$('#pontuacao').text($(this).val());
+         
+           switch ($(this).parent().parent().attr('data-value-obr')) {  // comparação que recebe o elemento pai
+             case 'gap' :
+                 $('#somaGap').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+               break;
+             case 'rampa':
+                 $('#somaRampa').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+               break;
+             case 'redutores':
+             	$('#somaRedutor').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             case 'encruzilhada':
+             	$('#somaEncruzilhada').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             case 'obstaculo':
+             	$('#somaObstaculo').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             case 'sala1':
+             	$('#somaSala1').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             case 'sala2':
+             	$('#somaSala2').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             case 'sala3':
+             	$('#somaSala3').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             case 'vitimas':
+             	$('#somaVitimas').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
+             default:
+               // statements_def
+               break;
+           }
+         });
+         
+         function somaElementoFinal() // função que faz a soma dos valores finais
+         {
+           var total = 0; // variavel que vai guarda o valor total
+           var gap = Number($('#somaGap').text()); // recebe o valor final do bnt radio da gap
+           var rampa = Number($('#somaRampa').text()); // recebe o valor final do bnt radio da rampa
+           var redutor = Number($('#somaRedutor').text()); // recebe o valor final do bnt radio da rampa
+           var encruzilhada = Number($('#somaEncruzilhada').text()); // recebe o valor final do bnt radio da rampa
+           var obstaculo = Number($('#somaObstaculo').text()); // recebe o valor final do bnt radio da 
+           var sala1 = Number($('#somaSala1').text()); // recebe o valor final do bnt radio da rampa
+           var sala2 = Number($('#somaSala2').text()); // recebe o valor final do bnt radio da rampa
+           var sala3 = Number($('#somaSala3').text()); // recebe o valor final do bnt radio da rampa
+           var vitimas = Number($('#somaVitimas').text()); // recebe o valor final do bnt radio da rampa
+           total =  gap + rampa + redutor + encruzilhada + obstaculo + sala1 + sala2 + sala3 + vitimas; // soma o valor final da gap com rampa
+           console.log(total); // mostra no console o valor final da soma
+           $('#pontuacao').text(total); // passa o valor final para o span do valor final
+         }
+      </script>
+
+      <script type="text/javascript">
+      		$('#actionSubmit').click(function(){ // actionSubmit
+      			$('#tempo').val($('#seconds').text());
+      			console.log($('#seconds').text());
+      			$('#formDados').submit();
+      		});
+
+      		$('#zerarpontuacao').click(function(){
+      			alert('Pontuação zerada!');
+      			window.location.reload();
+      		});
+      </script>
+   </body>
+</html>
+
