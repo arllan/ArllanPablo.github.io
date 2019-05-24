@@ -36,16 +36,16 @@
                            -->
                         <div id="timeDiv" class="navbar-brand " ><span id="seconds">00</span>:<span id="tens">00</span>s</div>
                         <div  class="btn-group elementBNT" role="group" aria-label="...">
-                           <button id="button-start" class="btn btn-success btn-default navbar-btn"><span class="glyphicon glyphicon-play"></span> Iniciar</button>
-                           <button id="button-stop" class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-pause"></span> Pausar</button>
-                           <button id="button-reset" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-stop"></span> Zerar</button>
+                           <button id="button-start" class="btn btn-success btn-default navbar-btn"><span class="glyphicon glyphicon-play"></span> <!-- Iniciar --></button>
+                           <button id="button-stop" class="btn btn-info navbar-btn"><span class="glyphicon glyphicon-pause"></span> <!-- Pausar --></button>
+                           <button id="button-reset" class="btn btn-warning navbar-btn"><span class="glyphicon glyphicon-stop"></span><!--  Zerar --></button>
                         </div>
                      </div>
                      <div class="navbar-header navbar-right">
                         <div class="btn-group navbar-btn" role="group" aria-label="...">
                            <div id="pontuacao" class="btn btn-default" disabled > 0</div>
                            <button id="zerarpontuacao" type="button" class="btn btn-danger">Zerar</button>
-                           <button id="actionSubmit" type="button" class="btn btn-success">Salvar</button>
+                          <!--  <button id="actionSubmit" type="button" class="btn btn-success">Salvar</button> -->
                            <!--
                            <div class="btn-group" role="group">
                               <button id="nadaaaa" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,16 +81,19 @@
 	                  </label>
 	                  <div data-value-obr="redutores" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="5" name="redutor" id="option1" autocomplete="off">1º
+	                     <input class="elementoSoma" type="radio" value="5" name="redutor" id="option1" autocomplete="off">1x
 	                     </label>
 	                     <label class="btn btn-success ">
-	                     <input class="elementoSoma" type="radio" value="10" name="redutor" id="option2" autocomplete="off">2º
+	                     <input class="elementoSoma" type="radio" value="10" name="redutor" id="option2" autocomplete="off">2x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="15" name="redutor" id="option3" autocomplete="off">3º
+	                     <input class="elementoSoma" type="radio" value="15" name="redutor" id="option3" autocomplete="off">3x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="20" name="redutor" id="option3" autocomplete="off">4º
+	                     <input class="elementoSoma" type="radio" value="20" name="redutor" id="option3" autocomplete="off">4x
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="redutor" id="option3" autocomplete="off">XX
 	                     </label>
 	                     <span id="somaRedutor" class="input-group-addon">0</span>
 	                  </div>
@@ -102,16 +105,19 @@
 	                  </label>
 	                  <div data-value-obr="obstaculo" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="10" name="obstaculo" id="option1" autocomplete="off">1º
+	                     <input class="elementoSoma" type="radio" value="10" name="obstaculo" id="option1" autocomplete="off">1x
 	                     </label>
 	                     <label class="btn btn-success ">
-	                     <input class="elementoSoma" type="radio" value="20" name="obstaculo" id="option2" autocomplete="off">2º
+	                     <input class="elementoSoma" type="radio" value="20" name="obstaculo" id="option2" autocomplete="off">2x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="30" name="obstaculo" id="option3" autocomplete="off">3º
+	                     <input class="elementoSoma" type="radio" value="30" name="obstaculo" id="option3" autocomplete="off">3x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="40" name="obstaculo" id="option3" autocomplete="off">4º
+	                     <input class="elementoSoma" type="radio" value="40" name="obstaculo" id="option3" autocomplete="off">4x
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="obstaculo" id="option3" autocomplete="off">XX
 	                     </label>
 	                     <span id="somaObstaculo" class="input-group-addon">0</span>
 	                  </div>
@@ -119,20 +125,23 @@
 
 	                  <!--botão-->
 	                  <label>
-	                     <h5> Encruzilhada</h5>
+	                     <h5> Intersecção ou beco sem saída</h5>
 	                  </label>
 	                  <div data-value-obr="encruzilhada" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="10" name="encruzilhada" id="option1" autocomplete="off">1º
+	                     <input class="elementoSoma" type="radio" value="15" name="encruzilhada" id="option1" autocomplete="off">1x
 	                     </label>
 	                     <label class="btn btn-success ">
-	                     <input class="elementoSoma" type="radio" value="20" name="encruzilhada" id="option2" autocomplete="off">2º
+	                     <input class="elementoSoma" type="radio" value="30" name="encruzilhada" id="option2" autocomplete="off">2x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="30" name="encruzilhada" id="option3" autocomplete="off">3º
+	                     <input class="elementoSoma" type="radio" value="45" name="encruzilhada" id="option3" autocomplete="off">3x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="40" name="encruzilhada" id="option4" autocomplete="off">4º
+	                     <input class="elementoSoma" type="radio" value="60" name="encruzilhada" id="option4" autocomplete="off">4x
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="encruzilhada" id="option4" autocomplete="off">XX
 	                     </label>
 	                     <span id="somaEncruzilhada" class="input-group-addon">0</span>
 	                  </div>
@@ -144,13 +153,16 @@
 	                  </label>
 	                  <div data-value-obr="gap" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="10" name="gap" id="option1" autocomplete="off">1º
+	                     <input class="elementoSoma" type="radio" value="10" name="gap" id="option1" autocomplete="off">1x
 	                     </label>
 	                     <label class="btn btn-success ">
-	                     <input class="elementoSoma" type="radio" value="20" name="gap" id="option2" autocomplete="off">2º
+	                     <input class="elementoSoma" type="radio" value="20" name="gap" id="option2" autocomplete="off">2x
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="30" name="gap" id="option3" autocomplete="off">3º
+	                     <input class="elementoSoma" type="radio" value="30" name="gap" id="option3" autocomplete="off">3x
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="gap" id="option4" autocomplete="off">XX
 	                     </label>
 	                     <span id="somaGap" class="input-group-addon">0</span>
 	                  </div>
@@ -169,13 +181,16 @@
 	                     <label class="btn btn-success">
 	                     <input class="elementoSoma" type="radio" value="10" name="rampa" id="option3" autocomplete="off">3º
 	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="rampa" id="option4" autocomplete="off">XX
+	                     </label>
 	                     <span id="somaRampa" class="input-group-addon">0</span>
 	                  </div>
 	                  <!--botão-->
 
 	                  <!--botão-->
 	                  <label>
-	                     <h5> Sala 1º </h5>
+	                     <h5> Marcador 1 </h5>
 	                  </label>
 	                  <div data-value-obr="sala1" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
@@ -196,7 +211,7 @@
 
 	                  <!--botão-->
 	                  <label>
-	                     <h5> Sala 2º </h5>
+	                     <h5> Marcador 2 </h5>
 	                  </label>
 	                  <div data-value-obr="sala2" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
@@ -217,17 +232,38 @@
 
 	                  <!--botão-->
 	                  <label>
-	                     <h5> Sala 3º </h5>
+	                     <h5> área interna de uma passagem </h5>
+	                  </label>
+	                  <div data-value-obr="passagem" class="btn-group btn-group-justified" data-toggle="buttons">
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="10" name="sala2" id="option1" autocomplete="off">1x
+	                     </label>
+	                     <label class="btn btn-success ">
+	                     <input class="elementoSoma" type="radio" value="20" name="sala2" id="option2" autocomplete="off">2x
+	                     </label>
+	                     <label class="btn btn-success">
+	                     <input class="elementoSoma" type="radio" value="30" name="sala2" id="option3" autocomplete="off">3x
+	                     </label>
+	                     <label class="btn btn-danger">
+	                     <input class="elementoSoma" type="radio" value="0" name="sala2" id="option3" autocomplete="off"> XX
+	                     </label>
+	                     <span id="somaPassagem" class="input-group-addon">0</span>
+	                  </div>
+	                  <!--botão-->
+
+	                  <!--botão-->
+	                  <label>
+	                     <h5> Vitima (<b>Morta</b> ) </h5>
 	                  </label>
 	                  <div data-value-obr="sala3" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="60" name="sala3" id="option1" autocomplete="off">1º
+	                     <input class="elementoSoma" type="radio" value="50" name="sala3" id="option1" autocomplete="off">1º
 	                     </label>
 	                     <label class="btn btn-success ">
-	                     <input class="elementoSoma" type="radio" value="40" name="sala3" id="option2" autocomplete="off">2º
+	                     <input class="elementoSoma" type="radio" value="30" name="sala3" id="option2" autocomplete="off">2º
 	                     </label>
 	                     <label class="btn btn-success">
-	                     <input class="elementoSoma" type="radio" value="20" name="sala3" id="option3" autocomplete="off">3º
+	                     <input class="elementoSoma" type="radio" value="10" name="sala3" id="option3" autocomplete="off">3º
 	                     </label>
 	                     <label class="btn btn-danger">
 	                     <input class="elementoSoma" type="radio" value="0" name="sala3" id="option3" autocomplete="off"> > 4º
@@ -238,7 +274,7 @@
 
 	                  <!--botão-->
 	                  <label>
-	                     <h5> Vitimas </h5>
+	                     <h5> Vitimas ( <b>viva</b> ) </h5>
 	                  </label>
 	                  <div data-value-obr="vitimas" class="btn-group btn-group-justified" data-toggle="buttons">
 	                     <label class="btn btn-success">
@@ -321,6 +357,10 @@
              	$('#somaVitimas').text($(this).val()); // o campo recebe o valor do botão radio clicado.
                  somaElementoFinal();
              	break;
+             case 'passagem':
+             	$('#somaPassagem').text($(this).val()); // o campo recebe o valor do botão radio clicado.
+                 somaElementoFinal();
+             	break;
              default:
                // statements_def
                break;
@@ -339,7 +379,8 @@
            var sala2 = Number($('#somaSala2').text()); // recebe o valor final do bnt radio da rampa
            var sala3 = Number($('#somaSala3').text()); // recebe o valor final do bnt radio da rampa
            var vitimas = Number($('#somaVitimas').text()); // recebe o valor final do bnt radio da rampa
-           total =  gap + rampa + redutor + encruzilhada + obstaculo + sala1 + sala2 + sala3 + vitimas; // soma o valor final da gap com rampa
+           var passagem = Number($('#somaPassagem').text());
+           total =  gap + rampa + redutor + encruzilhada + obstaculo + sala1 + sala2 + sala3 + vitimas + passagem; // soma o valor final da gap com rampa
            console.log(total); // mostra no console o valor final da soma
            $('#pontuacao').text(total); // passa o valor final para o span do valor final
          }
