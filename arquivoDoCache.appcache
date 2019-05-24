@@ -4,13 +4,12 @@ CACHE MANIFEST
 
 CACHE:
 # ARQUIVOS QUE VÃO FICAR NO CACHE DO NAVEGADOR
-index.html
 css/bootstrap.min.css
 js/jquery.min.js
 js/index.js
 js/bootstrap.js
 js/bootstrap.min.js
-js/index2.js
+index2.html
 
 NETWORK:
 # ARQUIVOS QUE DEPENDEM DA WEB
