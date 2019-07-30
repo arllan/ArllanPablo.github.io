@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="#">
+				        NADA
+				      </a>
+				    </div>
+				  </div>
+				</nav>
+			</div>
+			<div class="row">
+				<dir class="col-lg-2"></dir>
+				<dir class="col-lg-8">
+					<div class="well">
+						<p>Longitude: <span id="longitude">--</span></p>
+						<p>Latitude: <span id="latitude">--</span></p>
+					</div>
+				</dir>
+				<dir class="col-lg-2"></dir>
+			</div>
+			<div class="row">
+				<nav class="navbar navbar-default navbar-fixed-bottom">
+				  <div class="container">
+				    <button id="bnt-evento-iniciar" type="button" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Iniciar GPS</button>
+				  </div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script type="text/javascript">
+			$("#bnt-evento-iniciar").on('click',function (){
+				
+				// setInterval(function(){localizacao();}, 1000);
+				
+			})
+			if('geolocation' in navigator)
+			{
+				const watcher = navigator.geolocation.watchPosition(function(position){
+					$("#longitude").text(position.coords.longitude);
+					$("#latitude").text(position.coords.latitude);
+
+
+				//console.log(typeof position);
+				console.log(position.coords.longitude);
+				
+
+			})	
+			}
+			else
+			{
+				alert("ops, não foi possivel pegar a localização")
+			}
+			
+		</script>
+	</body>
+</html>
