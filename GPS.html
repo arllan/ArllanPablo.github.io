@@ -28,9 +28,14 @@
 					<div class="well">
 						<p>Longitude: <span id="longitude">--</span></p>
 						<p>Latitude: <span id="latitude">--</span></p>
+						<p><span id="requisicao">--</span></p>
 					</div>
 				</dir>
 				<dir class="col-lg-2"></dir>
+			</div>
+
+			<div class="row">
+				<div id="googleMap" style="width:100%;height:400px;"></div>
 			</div>
 			<div class="row">
 				<nav class="navbar navbar-default navbar-fixed-bottom">
@@ -47,16 +52,19 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script type="text/javascript">
-			$("#bnt-evento-iniciar").on('click',function (){
-				
-				// setInterval(function(){localizacao();}, 1000);
-				
-			})
+
+			var longitude ;
+			var latitude ;
 			if('geolocation' in navigator)
 			{
 				const watcher = navigator.geolocation.watchPosition(function(position){
+					
+					longitude = position.coords.longitude ;
+					latitude = position.coords.latitude ;
 					$("#longitude").text(position.coords.longitude);
 					$("#latitude").text(position.coords.latitude);
+					setInterval(requisicao(longitude,latitude),1000);
+					
 
 
 				//console.log(typeof position);
@@ -67,8 +75,42 @@
 			}
 			else
 			{
-				alert("ops, não foi possivel pegar a localização")
+				alert("ops, não foi possivel pegar a localização");
+				setInterval(requisicao(longitude,latitude),1000);
 			}
+
+			
+			var conta = 0;
+				
+			function requisicao(entradaA,entradaB) 
+				{	
+					
+					
+					$('#requisicao').text(conta = conta + 1);
+					$.ajax({
+
+			           type: "GET", // informa se a requisição vai ser POST ou GET
+			          // data: { coins: entrada }, // Parametros a ser enviados
+			           url: "https://choosy-strap.000webhostapp.com/insert.php?nome=arllan&celular=819888888&instituicao="+entradaA+"&email=arllanpal@mail.com&equipe="+entradaB, // destino da requisição
+			           //dataType: "json", // Você define qual o tipo de dado a ser retornado pela requisição. Os valores possíveis são: xml, html, json, jsonp, script e text.
+			           success: function(result){ // se caso a requisição aconteceu com sucesso
+			               console.log(result);
+
+			              
+			           },
+			           beforeSend: function(){  // realiza ações antes de iniciar a requisição
+			             console.log("iniciando a requisição...");
+			              //$('#myModal').modal('show');
+			           },
+			           complete: function(msg){ // quando a requisição e completada
+			               console.log("Requisição finalizada!");
+			               //$('#myModal').modal('hide');
+
+			             //  console.log(msg.status);
+			           } 
+			       })//.fail(function(result) { alert(result + "error" )});
+
+				}
 			
 		</script>
 	</body>
