@@ -1,0 +1,41 @@
+.btn-facebook
+	{
+		border-style: solid;
+		border-width: 2px;
+	    border-radius:0;
+	    border-color: rgb(255,255,255);
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .btn-facebook:hover 
+    {
+    	border-style: solid;
+		border-width: 2px;
+	    border-radius:0;
+	    border-color: rgb(255,255,255);
+	    background-color: rgb(255,255,255);
+    }
+    #textoBotao {
+    	color: rgb(255,255,255);
+    	
+    }
+    .btn-facebook:hover #textoBotao
+    {
+    	color: rgb(84,150,252);
+
+    }
+    .SegundaLinha{
+    	margin-top: 3%;
+    }
+    .img-responsive {
+        min-width: 100px;
+        min-height: 100px;
+    }
+    .img-titulo {
+
+        margin-top: 20px;
+    }
+    #nome{
+        color: rgb(255,255,255);
+        font-size: 18px;
+    }
