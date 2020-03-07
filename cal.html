@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="cabecalho">
+            <center><span id="textoTitulo"><b>CALCULADORA DE TIMELAPSE</b></span></center> 
+        </div>
+        <div class="row well">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="input-group seletores">
+                    <div class="input-group-addon"><span>Intervalo de disparo (SEGUNDOS)</span></div><input id="IntervaloDeDisparo" class="form-control" type="number">
+                </div>
+                <div class="input-group seletores">
+                    <div class="input-group-addon"><span>Tempo de gravação (MINUTOS)</span></div><input id="TempoDeGravacao" class="form-control" type="number">
+                </div>
+                <div class="input-group seletores">
+                    <div class="input-group-addon"><span>Quadros por segundo (FPS)</span></div><input id="fps" class="form-control" type="number">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <span id="videoFinal" class="badge">X</span>
+                    DURAÇÃO DO VÍDEO (ARQUIVO FINAL)
+                  </li>
+                  <!-- <li class="list-group-item">
+                    <span class="badge">X</span>
+                    NÚMERO TOTAL DE FOTOS
+                  </li> -->
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <button id="gerar" class="btn btn-block btn-success navbar-btn" type="button">GERAR</button>
+            </div>
+        </nav>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        $("#gerar").on("click",function(){
+            var IntervaloDeDisparo = $("#IntervaloDeDisparo").val();
+            var  fps = $("#fps").val();
+            var TempoDeGravacao = $("#TempoDeGravacao").val();
+            var valorFinal ; 
+            var legenda ;
+            valorFinal = (TempoDeGravacao * 60) / (IntervaloDeDisparo * fps);
+            var valorEmSegundo = (valorFinal / 60) ; 
+            
+            if (valorEmSegundo <= 1) {
+                legenda = "minuto";
+            }
+            else{
+                legenda = "Minutos";
+            }
+
+            $("#videoFinal").text(valorEmSegundo + " " + legenda);
+
+            console.log("IntervaloDeDisparo: " + IntervaloDeDisparo); 
+            console.log("fps: " + fps); 
+            console.log("TempoDeGravacao: " + TempoDeGravacao);             
+            console.log("valorFinal: " + valorFinal); 
+        });
+
+
+
+    </script>
+</body>
+</html>
