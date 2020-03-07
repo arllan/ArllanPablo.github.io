@@ -39,3 +39,20 @@
         color: rgb(255,255,255);
         font-size: 18px;
     }
+
+#cabecalho {
+  background-color: #fadb3d;
+  height: auto;
+}
+
+#textoTitulo {
+  font-size: 30px;
+}
+.seletores {
+  margin-top: 30px;
+  margin-bottom: 30px;
+ }
+ #videoFinal{
+ 	font-size: 20px;
+ }
+
